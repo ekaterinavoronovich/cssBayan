@@ -62,7 +62,14 @@ border-bottom: 3px solid rgba(0, 0, 0, 0.486);
   }
 }
 
-
+@media (max-width: 600px){
+  .section-item_snap{
+    font-size: 1.0rem;  
+  }
+  .title{
+    font-size: 1.5rem;
+  }
+}
 .section-item:checked ~.section-item_snap{
   color: rgb(100, 106, 106);
 }
