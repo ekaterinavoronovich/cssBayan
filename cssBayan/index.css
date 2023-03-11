@@ -1,0 +1,88 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,600&family=Roboto&family=Titillium+Web:wght@900&display=swap');
+
+* {
+box-sizing: border-box; 
+}
+.wrapper {
+ width: 100%;
+ max-width: 1920px;
+ margin: 0 auto;
+ padding: 20px;
+ display: grid;
+ justify-content: center;
+ background-color:rgb(241, 234, 234); 
+ font-family:'Titillium Web', sans-serif;
+ font-weight: 900;
+ overflow: hidden;
+}
+ 
+.title {
+font-size: 3em;
+color: rgb(104, 98, 98); 
+border-bottom: 3px solid rgba(0, 0, 0, 0.486);
+}
+.section-item {
+  position: absolute;
+  opacity: 0;
+  
+}
+.section-item_snap {
+ display: block;
+ font-size: 2.5rem;
+ color: rgb(73, 173, 216);
+ border-bottom: 3px solid rgba(0, 0, 0, 0.486);
+  
+}
+.section-item_snap::after {
+  display: none;
+  content:url(icon/plus-solid.svg);
+  width: 2rem;
+  position: absolute;
+  right: 20px;
+}
+.section-item_content{
+ padding: 20px;
+ display: none;
+ 
+}
+.section-item_img {
+  max-width: 300px;
+  width: 100%;
+  
+}
+
+@media (max-width: 820px){
+  .section-item_snap{
+    font-size: 2.0rem;  
+  }
+  .title{
+    font-size: 2.5rem;
+  }
+}
+
+
+.section-item:checked ~.section-item_snap{
+  color: rgb(100, 106, 106);
+}
+
+.section-item:checked ~.section-item_content {
+ display: block;  
+ display: flex;
+ justify-content: center;
+}
+
+
+.wrapper:hover > .section >.section-item:hover ~.section-item_snap::after{
+display: block;
+}
+/*.section-item:checked ~.section-item_snap::after{
+  content:url(icon/xmark-solid.svg);
+  fill:rgb(100, 106, 106) ;
+  width: 1.5rem;
+  position: absolute;
+  right: 20px;
+  }
+
+*/
